@@ -1,0 +1,25 @@
+version: '3.9'
+
+networks:
+  proxy:
+    name: ${PROXY_NETWORK_NAME:-proxy}
+    external: true
+
+volumes:
+  openwebui-data:
+    name: ${OPENWEBUI_VOLUME_NAME:-openwebui}
+    external: true
+
+services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:ollama
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - openwebui-data:/app/backend/data
+    networks:
+      - proxy
+    environment:
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}

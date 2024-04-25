@@ -1,0 +1,43 @@
+# .gitignore para Docker Compose
+
+# Ignorar .env ya que puede contener información sensible
+.env
+
+# Ignorar la carpeta de los logs
+logs/
+
+# Ignorar la carpeta de los datos
+data/
+
+# Archivos temporales de Docker
+Dockerfile.*.tmp
+
+# Carpenteras de Docker Compose
+.docker/
+
+# Ignorar los artefactos de build
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache/
+
+# Ignorar todos los archivos .pyo, .pyc, .pyd
+*.pyo
+*.pyc
+*.pyd
+
+# Ignorar todos los archivos .so, .o, .c y los compilados de C++
+*.so
+*.o
+*.c
+*.cc
+*.cpp
+
+# Ignorar todos los artefactos de compilacion de Go
+*.out
+
+# Ignorar todos los archivos temporales SSH
+.ssh/
+
+# Mac OS basura
+.DS_Store
