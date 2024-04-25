@@ -6,7 +6,7 @@ Este repositorio contiene docker compose file para la aplicación OpenWebUI. Ope
 
 El servicio `openwebui` se basa en la imagen `ghcr.io/open-webui/open-webui:ollama` por lo que ya incluye el servicio de [Ollama](https://ollama.com). Este servicio es un miembro de una red llamada por defecto _proxy_, en caso que se necesite agregarla a otra diferente solo defina el valor de la variable de ambiente `PROXY_NETWORK_NAME`. Se espera que esta red se haya creado antes de ejecutar `docker-compose up`.
 
-También se requiere de un volumen `openwebui` que se utiliza para almacenar los datos de la base de OpenWebUI. Este volumen se maneja como externo para cubir cualquier requerimiento especifico que necesite definir. Si por el contrario desea utilizar otro volumen solo sobreescriba la variable de ambiente `OPENWEBUI_VOLUME_NAME`.
+También se requiere de un volumen `openwebui` que se utiliza para almacenar los datos de la base de OpenWebUI. Este volumen se maneja como externo para cubir cualquier requerimiento especifico que necesite definir. Si por el contrario desea utilizar otro volumen solo sobreescriba la variable de ambiente `OPENWEBUI_VOLUME_NAME`. De igual forma para persistir los datos de los modelos descargados por Ollama se utiliza el volumen `OLLAMA_VOLUME_NAME`, por defecto se denomina `ollama`.
 
 Además, debe configurar una clave maestra de `WEBUI_SECRET_KEY`. Esto debe ser una cadena aleatoria segura. No se debe perder esta clave, ya que se utiliza para firmar los tokens de autenticación.
 

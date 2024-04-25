@@ -6,6 +6,9 @@ networks:
     external: true
 
 volumes:
+  ollama-data:
+    name: ${OLLAMA_VOLUME_NAME:-ollama}
+    external: true
   openwebui-data:
     name: ${OPENWEBUI_VOLUME_NAME:-openwebui}
     external: true
@@ -19,6 +22,7 @@ services:
         condition: on-failure
     volumes:
       - openwebui-data:/app/backend/data
+      - ollama-data:/root/.ollama
     networks:
       - proxy
     environment:
