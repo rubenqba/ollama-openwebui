@@ -8,7 +8,7 @@ El servicio `openwebui` se basa en la imagen `ghcr.io/open-webui/open-webui:olla
 
 También se requiere de un volumen `openwebui` que se utiliza para almacenar los datos de la base de OpenWebUI. Este volumen se maneja como externo para cubir cualquier requerimiento especifico que necesite definir. Si por el contrario desea utilizar otro volumen solo sobreescriba la variable de ambiente `OPENWEBUI_VOLUME_NAME`.
 
-Además, debe configurar una clave maestra de `WEBUI_SECRET_KEY`. Esto debe ser una cadena aleatoria segura. No se debe perder esta clave, ya que se utiliza para firmar los tokens de autenticación. 
+Además, debe configurar una clave maestra de `WEBUI_SECRET_KEY`. Esto debe ser una cadena aleatoria segura. No se debe perder esta clave, ya que se utiliza para firmar los tokens de autenticación.
 
 ## Despliegue de la aplicación
 
